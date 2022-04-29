@@ -178,7 +178,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         -ms-grid-rows: 400px;
-        grid-template-rows: 400px;
+        grid-template-rows: 450px;
     }
     .register-form-login {
         -ms-grid-column: 2;
