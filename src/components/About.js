@@ -61,7 +61,43 @@ const About = () => {
              This platform also offers online booking and quick response to clients of all levels 
           </div>
         </div>
-       
+        <div className="services_t">
+          <h1>What We Do</h1>
+        </div>
+
+        <div className="service">
+          <li>
+            <img src={starCheked} alt="starCheked" />
+            These Happy Days are yours
+          </li>
+          <li>
+            <img src={starCheked} alt="starCheked" />
+            There ain't nothin' wrong with .
+          </li>
+        </div>
+        <div className="service">
+          <li>
+            <img src={starCheked} alt="starCheked" />
+            Why do we always come.
+          </li>
+          <li>
+            <img src={starCheked} alt="starCheked" />
+            Why do we always come.with the best
+          </li>
+        </div>
+        <div className="service">
+          <li>
+            <img src={starCheked} alt="starCheked" />
+            These Happy Days are you with
+          </li>
+          <li>
+            <img src={starCheked} alt="starCheked" />
+            There ain't nothin' wrong with .
+          </li>
+        </div>
+
+        <Link to="/"></Link>
+      </div>
     </>
   );
 };
