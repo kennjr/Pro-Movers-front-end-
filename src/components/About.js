@@ -28,7 +28,40 @@ const About = () => {
           </div>
         </div>
 
-      </div>
+        <div className="row-title">
+          <h1>OurCompany</h1>
+          <hr />
+        </div>
+
+        <div className="row1 row2 ">
+          <div className="col1_2">
+            <span className="text">We are a Nairobi based top </span>
+            <h3>Mover company</h3>
+            <p>
+             
+              That has been in the industry since <i>september 15nth 2019</i> <br />
+              Now were up in the big leagues getting our turn at bat. Our work
+              is expanding  more to movers not only in Nairobi but in other
+              cities in Kenya.
+            </p>
+          </div>
+          <div className="col2">
+            <img src={mover1} alt="move" />
+          </div>
+        </div>
+
+        <div className="row3 row1">
+          <div className="mover2">
+            <img src={mover2} alt="move" />
+          </div>
+          <div className="mover2_txt">
+            This company majors in registering qualified high quality professional movers in the city <br />
+            They are registered under one roof called <h4>Pro movers</h4>This is to provide convidence 
+            and acceptability from clients  and also avail a variety of mover on one dial quick. <br />
+             This platform also offers online booking and quick response to clients of all levels 
+          </div>
+        </div>
+       
     </>
   );
 };
