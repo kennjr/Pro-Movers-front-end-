@@ -3,3 +3,23 @@
     margin-right: 60px;
 
 }
+.row1{
+     margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.row1 .col2 img{
+   
+    width: 60vw;
+    max-height: 350px;
+}
+.row1 .col1{
+    padding-top: 30px;
+}
+.row1 .col1 img{
+    width: 200px;
+    margin-bottom: 30px;
+}
+.row1 .col1 {
+    text-align: center;
+}
