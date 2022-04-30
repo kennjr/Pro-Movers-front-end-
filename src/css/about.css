@@ -23,3 +23,96 @@
 .row1 .col1 {
     text-align: center;
 }
+.row-title{
+    margin-left: 30px;
+}
+.row-title hr{
+    width: 200px;
+    border: 2px solid #FFDD00;
+}
+.row2{
+    margin-top: 40px;
+}
+.row2 .col1_2 .text{
+    font-size: large;
+}
+.row2 .col1_2 p{
+    margin-top: 30px; 
+    margin-right: 230px;
+}
+.row2 .col2 img{
+    width: 46vw;
+    height: 280px;
+    
+}
+.row3{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.row3 .mover2 img{
+    width: 40vw;
+    height: 280px;
+    
+}
+
+.row3 .mover2_txt{
+    margin-left: 100px;
+}
+.services_t{
+    margin-top: 30px;
+    text-align: center;
+}
+.service{
+    
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  
+
+}
+.service li{
+    width: 40vw;
+    margin-left: 13vw;
+    
+}
+.service img{
+    width: 20px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .container{
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+.row1{
+     margin-top: 20px;
+    display: block;
+    /* justify-content: space-evenly; */
+}
+.row1 .col2 img{
+   
+    width: 90vw;
+    max-height: 350px;
+}
+.row1 .col1{
+    padding-top: 30px;
+}
+.row1 .col1 img{
+    width: 200px;
+    margin-bottom: 30px;
+}
+.row1 .col1 {
+    text-align: center;
+}
+
+.row-title h1{
+    margin-left: 11vw;
+}
+.row-title hr{
+    width: 200px;
+    border: 2px solid #FFDD00;
+    margin-left: 11vw;
+}
