@@ -1,5 +1,5 @@
 .login {
-    min-height: 100vh;
+    min-height: calc(100vh - 58px);
     max-width: 1440px;
     margin-inline: auto;
     display: -webkit-box;
