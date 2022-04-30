@@ -116,3 +116,23 @@
     border: 2px solid #FFDD00;
     margin-left: 11vw;
 }
+.row2{
+    margin-top: 40px;
+    
+}
+.row2 .col1_2 .text{
+    font-size: large;
+    width: 100vw;
+}
+.row2 .col1_2 p{
+    width: 90vw;
+    margin-top: 30px; 
+    margin-right: 230px;
+}
+.row2 .col2 img{
+    width: 90vw;
+    height: 280px;
+    
+}
+.row3{
+    margin-top: 20px;
