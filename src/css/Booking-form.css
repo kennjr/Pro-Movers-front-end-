@@ -1,0 +1,99 @@
+.book{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+     max-width: 550px;
+    -webkit-box-shadow: 0 0 1rem 0.2rem #e6e6e6;
+    box-shadow: 0 0 1rem 0.2rem #e6e6e6;
+    margin-inline: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    
+}
+.book-form{
+    padding-top: .2rem;
+     display: -webkit-box;
+    display: -ms-flexbox;
+    margin-bottom: 40px ;
+    margin-top: 40px;
+   
+/* background-color: red; */
+    min-width: 80%;
+
+}
+.book-form .book-form-title{
+    
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: larger;
+}
+.book-form input{
+    padding-left: .5rem;
+    margin-bottom: 10px;
+    width: 100%;
+  
+    height: 2.5rem;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    
+    
+}
+.book-form input:focus{
+    
+    outline: none;
+    border: 2px solid #ffdd00;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+.book-form textarea{
+    padding-top: 10px;
+     padding-left: .5rem;
+    margin-bottom: 10px;
+    width: 100%;
+    
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+.book-form textarea:focus{
+     outline: none;
+    border: 2px solid #ffdd00;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.book-form button{
+   background-color: #FFDD00;
+    border: 1px solid #FFDD00;
+    border-radius: 1rem;
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+.book-form button:hover {
+    background-color: #ffe01a;
+    border: 1px solid #ffe01a;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+
+.book{
+    max-width: 90%;
+} 
+
+}
