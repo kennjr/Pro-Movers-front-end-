@@ -6,7 +6,7 @@ import About from './components/About';
 import './App.css';
 import Movers from './components/Movers';
 import Book from './components/Book';
-
+import Footer from './components/Footer';
 function App() {
   return (
     <>
@@ -18,7 +18,7 @@ function App() {
         <Route path="register" element={<Register />}></Route>
         <Route path="movers/book" element={<Book />}></Route>
       </Routes>
-      
+      <Footer></Footer>
     </>
   );
 }
