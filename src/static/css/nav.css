@@ -91,7 +91,7 @@
 
 .header-nav-links-ul li:hover {
     transition: 0.3s ease-in-out;
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
 
 .header-nav-links-ul li img {
