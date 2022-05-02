@@ -1,11 +1,14 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable no-unused-vars */
-import React,{useState, useEffect, useRef} from "react";
+
+import React,{useState, useEffect, useRef,useContext} from "react";
 import '../../static/css/login.css'
+import AuthContext from "../context/AuthContext";
 import {Link} from 'react-router-dom';
 
 
 let Login = ()=>{
+
+    let {loginUser} = useContext(AuthContext);
 
     let [email, useEmail] = useState('')
     let [pwd, usePwd] = useState()
@@ -24,16 +27,11 @@ let Login = ()=>{
         usePwd(e.target.value)
     };
 
-    let handleSubmit = e =>{
-        e.preventDefault();
-        console.log(email);
-        console.log(pwd);
-    };
 
     return(
         <>
             <section className='login'>
-                <form  className="login-form" onSubmit={handleSubmit}>
+                <form  className="login-form" onSubmit={loginUser}>
                     <article className="login-form-register">
                         <div className="login-form-register-container">
                             <div className="login-form-register-title">
