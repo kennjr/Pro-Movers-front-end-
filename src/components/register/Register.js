@@ -1,4 +1,6 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/rules-of-hooks */
+import React,{useState,useRef,useEffect} from 'react';
 import '../../static/css/register.css'
 import {Link} from 'react-router-dom';
 
@@ -6,10 +8,32 @@ import {Link} from 'react-router-dom';
 
 let Register = ()=>{
 
+    let [username, useUsername] = useState('');
+    let [email, useEmail] = useState('');
+    let [pwd, usePwd] = useState('');
+    let [pwd2, usePwd2] = useState('');
+    let [role, useRole] = useState('');
+
+    let usernameRef = useRef()
+    
+    let handleSubmit = e=>{
+        e.preventDefault();
+        console.log(`${username},${email}, ${pwd}, ${pwd2},${role}`)
+        useUsername('')
+        useEmail('')
+        usePwd('')
+        usePwd2('')
+        useRole('')
+    };
+
+    useEffect(()=>{
+        usernameRef.current.focus()
+    },[])
+
     return(
         <>
             <section className='register'>
-                <form action="" className="register-form">
+                <form action="" className="register-form" onSubmit={handleSubmit}>
                     <article className="register-form-login">
                         <div className="register-form-login-container">
                             <div className="register-form-login-title">
@@ -28,26 +52,26 @@ let Register = ()=>{
                             <h1>Sign Up</h1>
                         </div>
                         <div className="register-form-form-username">
-                            <input type="text" name="username" id="username" placeholder="Username" />
+                            <input type="text"  ref={usernameRef} placeholder="Username" value={username} onChange={(e=>useUsername(e.target.value))} required/>
                         </div>
                         <div className="register-form-form-email">
-                            <input type="email" name="email" id="email"  placeholder="Email" />
+                            <input type="email"  placeholder="Email" value={email} onChange={(e=>useEmail(e.target.value))} required/>
                         </div>
                         <div className="register-form-form-password">
-                            <input type="password" name="password" id="password"  placeholder="Password" />
+                            <input type="password"  placeholder="Password" value={pwd} onChange={(e=>usePwd(e.target.value))} required/>
                         </div>
                         <div className="register-form-form-password">
-                            <input type="password" name="password2" id="password2"  placeholder="Password Confirmation" />
+                            <input type="password"   placeholder="Password Confirmation" value={pwd2} onChange={(e=>usePwd2(e.target.value))} required/>
                         </div>
                         <div className="register-form-form-role">
                             <p className="register-form-form-role-title">What is your role? </p>
                             <div className="register-form-form-role-container">
                                 <div className="register-form-form-role-user">
-                                    <input type="radio" name="role" id="role" />
+                                    <input type="radio" name="role" id="role" value='user' onChange={e=>useRole(e.target.value)} required/>
                                     <p>User</p>
                                 </div>
                                 <div className="register-form-form-role-mover">
-                                    <input type="radio" name="role" id="role" />
+                                    <input type="radio" name="role" id="role" value='mover' onChange={e=>useRole(e.target.value)} required/>
                                     <p>Mover</p>
                                 </div>
                             </div>
