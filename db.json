@@ -1,0 +1,22 @@
+{
+  "bookings": [
+    {
+      "id": 1,
+      "currentLocation": "Nairobi/Donholm",
+      "newLocation": "Nairobi/Kawangware",
+      "mover": "Old Guard Truck Yard",
+      "movingDate": "2022-05-12",
+      "Package": "Bed sitter",
+      "packageDescription": "Its just a small space so not much to move"
+    },
+    {
+      "currentLocation": "Nairobi,Kawangware",
+      "newLocation": "Nairobi,Githurai",
+      "mover": "New Pegions",
+      "movingDate": "2022-05-18",
+      "Package": "bedsitter",
+      "packageDescription": "a small place with not much",
+      "id": 2
+    }
+  ]
+}
