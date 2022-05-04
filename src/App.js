@@ -8,7 +8,7 @@ import Nav from './components/nav/Nav';
 
 import About from './components/About';
 
-import MoverAbout from './components/moverabout/MoverAbout';
+// import MoverAbout from './components/moverabout/MoverAbout';
 import Userlogs from './components/activity-logs-user/Userlogs';
 import Moverlogs from './components/activity-logs-mover/Moverlogs';
 
@@ -56,7 +56,7 @@ const [bookings,setBookings]=useState([])
         </Routes>
       </AuthProvider>
 
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </>
   );
 }
