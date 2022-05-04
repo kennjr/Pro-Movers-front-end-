@@ -1,5 +1,5 @@
-import { useState,  } from 'react';
-// useEffect
+import { useState, useEffect } from 'react';
+
 import Register from './components/register/Register'
 import {Routes, Route} from 'react-router-dom';
 import Login from './components/login/Login';
@@ -34,6 +34,22 @@ const [bookings,setBookings]=useState([])
           // const newBooking={...booking}
           // setBookings([...bookings,newBooking])
   }
+  const [movers, setMovers] = useState([]);
+
+  useEffect(() =>{
+    const getMovers = async () =>{
+      const moversFromServer =await fetchMovers()
+      setMovers(moversFromServer)
+    }
+    getMovers();
+  },[]);
+
+  //fetch movers
+  const fetchMovers = async (id) =>{
+    const res =await fetch ("http://localhost:5000/movers");
+    const data = await res.json();
+    return data;
+  }
 
   return (
     <>
@@ -41,7 +57,7 @@ const [bookings,setBookings]=useState([])
 
       <Routes>
         <Route path="/about" element={<About />} onBook={makeBooking}></Route>
-        <Route path="movers" element={<Movers />}></Route>
+        <Route path="movers" element={<Movers movers={movers}/>}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="register" element={<Register />}></Route>
         <Route path="movers/book" element={<Book onBook={makeBooking} />}></Route>
