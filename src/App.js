@@ -36,9 +36,9 @@ const [bookings,setBookings]=useState([])
     });
     const data = await res.json()
 
-  //   setBookings([...bookings,data])
+    setBookings([...bookings,data])
          
-  // }
+  }
   const [movers, setMovers] = useState([]);
 
   useEffect(() =>{
