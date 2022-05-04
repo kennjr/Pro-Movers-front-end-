@@ -1,0 +1,120 @@
+.mover-activity {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.mover-activity-title {
+  padding: 2rem 0;
+  text-align: center;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #ffdd00;
+          text-decoration-color: #ffdd00;
+  text-decoration-thickness: .16rem;
+}
+
+.mover-activity-all {
+  padding: 0 .5rem;
+}
+
+.mover-activity-all-button-x {
+  height: .5rem !important;
+}
+
+.mover-activity-all-button-tick {
+  padding-top: .2rem;
+}
+
+.mover-activity-all article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mover-activity-all article button {
+  cursor: pointer;
+  margin-right: .2rem;
+}
+
+.mover-activity-all div {
+  border-radius: .5rem;
+  padding: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mover-activity-all div h3 {
+  font-size: .7rem;
+}
+
+.mover-activity-all div button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .3rem 1rem;
+  border-radius: .3rem;
+}
+
+.mover-activity-all div button img {
+  display: block;
+  height: 1rem;
+  margin-right: .2rem;
+}
+
+.mover-activity-all-pending {
+  -webkit-box-shadow: 0 0 .05rem .05rem #cfe2ff;
+          box-shadow: 0 0 .05rem .05rem #cfe2ff;
+}
+
+.mover-activity-all-declined {
+  -webkit-box-shadow: 0 0 .05rem .05rem #f8d7da;
+          box-shadow: 0 0 .05rem .05rem #f8d7da;
+}
+
+.mover-activity-all-accepted {
+  -webkit-box-shadow: 0 0 .05rem .05rem #d1e7dd;
+          box-shadow: 0 0 .05rem .05rem #d1e7dd;
+}
+
+@media (max-width: 768px) {
+  .mover-activity-all div {
+    margin-block: .5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .mover-activity-all {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: -ms-grid;
+    display: grid;
+    grid-gap: .5rem;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.redbutton {
+  background-color: #f8d7da;
+  border: 1px solid #f8d7da;
+  color: #85222b;
+}
+
+.greenbutton {
+  background-color: #d1e7dd;
+  border: 1px solid #d1e7dd;
+  color: #1b5a3c;
+}
+/*# sourceMappingURL=moverlogs.css.map */

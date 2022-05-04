@@ -1,0 +1,92 @@
+.user-activity {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.user-activity-title {
+  padding: 2rem 0;
+  text-align: center;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #ffdd00;
+          text-decoration-color: #ffdd00;
+  text-decoration-thickness: .16rem;
+}
+
+.user-activity-all {
+  padding: 0 .5rem;
+}
+
+.user-activity-all div {
+  border-radius: .5rem;
+  padding: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-activity-all div h3 {
+  font-size: .7rem;
+}
+
+.user-activity-all div button {
+  padding: .3rem 1rem;
+  border-radius: .3rem;
+}
+
+.user-activity-all-pending {
+  -webkit-box-shadow: 0 0 .05rem .05rem #cfe2ff;
+          box-shadow: 0 0 .05rem .05rem #cfe2ff;
+}
+
+.user-activity-all-pending button {
+  background-color: #cfe2ff;
+  border: 1px solid #cfe2ff;
+  color: #184fa0;
+}
+
+.user-activity-all-rejected {
+  -webkit-box-shadow: 0 0 .05rem .05rem #f8d7da;
+          box-shadow: 0 0 .05rem .05rem #f8d7da;
+}
+
+.user-activity-all-rejected button {
+  background-color: #f8d7da;
+  border: 1px solid #f8d7da;
+  color: #85222b;
+}
+
+.user-activity-all-active {
+  -webkit-box-shadow: 0 0 .05rem .05rem #d1e7dd;
+          box-shadow: 0 0 .05rem .05rem #d1e7dd;
+}
+
+.user-activity-all-active button {
+  background-color: #d1e7dd;
+  border: 1px solid #d1e7dd;
+  color: #1b5a3c;
+}
+
+@media (max-width: 768px) {
+  .user-activity-all div {
+    margin-block: .5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .user-activity-all {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: -ms-grid;
+    display: grid;
+    grid-gap: .5rem;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+/*# sourceMappingURL=userlogs.css.map */

@@ -5,6 +5,8 @@ import '../../static/css/nav.css';
 
 let Nav = ()=>{
 
+    
+
     let [isActive, setActive] = useState(false);
 
     const toggleClass = () => {
@@ -33,7 +35,7 @@ let Nav = ()=>{
                                 <li><NavLink to=''>Contact</NavLink></li>
                                 <li><NavLink to="/login">LOGIN</NavLink></li>
                                  
-                               
+
                             </ul>
                         </div>
                     </article>
