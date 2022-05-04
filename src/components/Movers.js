@@ -31,6 +31,7 @@ const Movers = ({ movers }) => {
         <div className="row-title">
           <h1>Our Registered movers</h1>
         </div>
+        
         {movers.map((mover) => (
 
           <div className="row3 row1">
