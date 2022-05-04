@@ -67,7 +67,7 @@ const [bookings,setBookings]=useState([])
       <AuthProvider>
         <Routes>
           <Route path="/about" element={<About />} onBook={makeBooking}></Route>
-          <Route path="movers" element={<Movers />}></Route>
+          <Route path="movers" element={<Movers movers={movers} />}></Route>
           <Route path="login" element={<Login />}></Route>
           <Route path="register" element={<Register />}></Route>
           <Route path="movers/book" element={<Book onBook={makeBooking} />}></Route>
