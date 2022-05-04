@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
 import "../css/about.css";
 import "../css/movers.css";
 
 const Movers = ({ movers }) => {
   const move2 = new URL("../images/move2.png", import.meta.url);
   const logo = new URL("../images/LogoMakr 2.png", import.meta.url);
-  const mover2 = new URL("../images/next21.png", import.meta.url);
+  // const mover2 = new URL("../images/next21.png", import.meta.url);
   // const move = new URL("../images/move.jpg", import.meta.url);
   return (
     <>
@@ -41,7 +41,7 @@ const Movers = ({ movers }) => {
             </div>
 
             <div className="mover2_txt">
-              <h4><h3 key={mover.id}>{mover.name}</h3></h4>
+              <h3 key={mover.id}>{mover.name}</h3>
               <p>{mover.description}</p>
               <br />
               <span className="button">
