@@ -32,7 +32,7 @@ let Nav = ()=>{
                                 <li><NavLink to="">Services</NavLink></li>
                                 <li><NavLink to="movers">Movers</NavLink></li>
                                 <li><NavLink to="/about">About</NavLink></li>
-                                <li><NavLink to=''>Contact</NavLink></li>
+                                <li><NavLink to='movers/logs'>Contact</NavLink></li>
                                 <li><NavLink to="/login">LOGIN</NavLink></li>
                                  
 
