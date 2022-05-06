@@ -3,7 +3,7 @@
 import React,{useState,useRef,useEffect} from 'react';
 import '../../static/css/register.css'
 import {Link} from 'react-router-dom';
-
+import axios from 'axios';
 
 
 let Register = ()=>{
@@ -18,12 +18,23 @@ let Register = ()=>{
     
     let handleSubmit = e=>{
         e.preventDefault();
-        console.log(`${username},${email}, ${pwd}, ${pwd2},${role}`)
-        useUsername('')
-        useEmail('')
-        usePwd('')
-        usePwd2('')
-        useRole('')
+        if(pwd === pwd2){
+            axios.post('https://api-promovers.herokuapp.com/register/',{
+                username:username,
+                email:email,
+                password:pwd,
+                acc_type:role
+            })
+            .then(res=>{
+                console.log(res)
+                useUsername('')
+                useEmail('')
+                usePwd('')
+                usePwd2('')
+                useRole('')
+            })
+            .catch(err=>console.log(err))
+        }
     };
 
     useEffect(()=>{
