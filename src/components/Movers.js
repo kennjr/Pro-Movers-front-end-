@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 // import { useState } from "react";
 import "../css/about.css";
 import "../css/movers.css";
+import { useState } from "react";
 
 const Movers = ({ movers }) => {
+  const [selectedLocation, setSelectedLocation] = useState("");
   const move2 = new URL("../images/move2.png", import.meta.url);
   const logo = new URL("../images/LogoMakr 2.png", import.meta.url);
   // const mover2 = new URL("../images/next21.png", import.meta.url);
@@ -30,27 +32,41 @@ const Movers = ({ movers }) => {
 
         <div className="row-title">
           <h1>Our Registered movers</h1>
+         
         </div>
-        
-        {movers.map((mover) => (
-
-          <div className="row3 row1">
-
-            <div className="mover2">
-
-              <img src={mover.image} alt="mover" />
-            </div>
-
-            <div className="mover2_txt">
-              <h3 key={mover.id}>{mover.name}</h3>
-              <p>{mover.description}</p>
-              <br />
-              <span className="button">
-                <Link to="/movers/book">Book this mover</Link>
-              </span>
-            </div>
+         <div className="cities">
+            <label > Filter</label>
+            <select
+              value="city"
+              onChange={(e) => setSelectedLocation(e.target.value)}
+            >
+              
+              <option value=""></option>
+              <option value="Nairobi">Nairobi</option>
+              <option value="Mombasa">Mombasa</option>
+              <option value="Nakuru">Nakuru</option>
+              <option value="Kisumu">Kisumu</option>
+            </select>
           </div>
-        ))}
+
+        {movers
+          .filter((mover) => mover.location.includes(selectedLocation))
+          .map((filteredMover) => (
+            <div className="row1 row3 ">
+              <div className="mover2">
+                <img src={filteredMover.image} alt="mover" />
+              </div>
+
+              <div className="mover2_txt">
+                <h3 key={filteredMover.id}>{filteredMover.name}</h3>
+                <p>{filteredMover.description}</p>
+                <br />
+                <span className="button">
+                  <Link to="/movers/book">Book this mover</Link>
+                </span>
+              </div>
+            </div>
+          ))}
 
         <hr />
         <div className="more">
