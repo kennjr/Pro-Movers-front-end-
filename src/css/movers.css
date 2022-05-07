@@ -2,7 +2,28 @@
    
     width: 50vw;
     max-height: 350px;
+    /* object-fit: cover; */
 }
+
+
+.cities {
+    float: right;
+    margin-bottom: 30px;
+}
+.cities label{
+    padding-right: 5px;
+}
+.cities select{
+    
+    padding: 2px;
+    border: solid #FFDD00;
+    border-radius: 2pc;
+    background-color: transparent;
+    outline: #FFDD00;
+   
+    
+}
+
 
 .button {
     /* padding-top: 1rem; */
@@ -16,7 +37,7 @@
 
 .button a {
     background-color: transparent;
-    /* border: 2px solid #1B2024; */
+    
     border-radius: 1rem;
     color: #1B2024;
     padding: .3rem .7rem;

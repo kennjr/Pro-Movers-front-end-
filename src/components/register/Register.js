@@ -2,9 +2,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React,{useState,useRef,useEffect} from 'react';
 import '../../static/css/register.css'
-import {Link} from 'react-router-dom';
-
-
+import {Link, browserHistory } from 'react-router-dom';
+import axios from 'axios';
+import * as ReactBootStrap from 'react-bootstrap';
 
 let Register = ()=>{
 
@@ -13,17 +13,34 @@ let Register = ()=>{
     let [pwd, usePwd] = useState('');
     let [pwd2, usePwd2] = useState('');
     let [role, useRole] = useState('');
+    let [loading, useLoading] = useState(false);
 
     let usernameRef = useRef()
     
     let handleSubmit = e=>{
         e.preventDefault();
-        console.log(`${username},${email}, ${pwd}, ${pwd2},${role}`)
-        useUsername('')
-        useEmail('')
-        usePwd('')
-        usePwd2('')
-        useRole('')
+        if(pwd === pwd2){
+            axios.post('https://api-promovers.herokuapp.com/register/',{
+                username:username,
+                email:email,
+                password:pwd,
+                acc_type:role
+            })
+            .then(res=>{
+                console.log(res)
+                useLoading(false)
+                window.location.href = '/login'
+                useUsername('')
+                useEmail('')
+                usePwd('')
+                usePwd2('')
+                useRole('')
+
+            })
+            useLoading(true)
+            
+            .catch(err=>console.log(err))
+        }
     };
 
     useEffect(()=>{
@@ -32,7 +49,12 @@ let Register = ()=>{
 
     return(
         <>
-            <section className='register'>
+            { loading?
+            <div className="spinner">
+                {<ReactBootStrap.Spinner animation="border" variant="warning" />}
+            </div>:''
+            }
+            <section className='register' style={{display:loading?'none':''}}>
                 <form action="" className="register-form" onSubmit={handleSubmit}>
                     <article className="register-form-login">
                         <div className="register-form-login-container">

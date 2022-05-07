@@ -17,14 +17,31 @@
       "Package": "bedsitter",
       "packageDescription": "a small place with not much",
       "id": 2
+    },
+    {
+      "currentLocation": "Nairobi,Eastlands",
+      "newLocation": "Nairobi,Githurai",
+      "mover": "move pro",
+      "movingDate": "2022-05-12",
+      "Package": "two bedroom",
+      "packageDescription": "the room is fully stocked",
+      "id": 3
     }
   ],
-  "movers":[
+  "movers": [
     {
-      "id":1,
-      "name":"Old Guard Truck yard",
-      "description":"This is to provide convidence and acceptability from clients and also avail a variety of mover on one dial quick.This platform also offers online booking and quick response to clients of all levels our listing within Nairobi is as follows:ksh: 5000 for bedsitters Ksh: 8000 for one bedroom Ksh: 12000 for two bedroom Ksh:12500 for for studio",
-      "image":"https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcLzEwLXRpcHMtZm9yLWhpcmluZy1hLXByb2Zlc3Npb25hbC1tb3Zlci0xLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTQwLCJoZWlnaHQiOjMwM319fQ=="
-    }
+      "id": 1,
+      "name": "Old Guard Truck yard",
+      "description": "This is to provide convidence and acceptability from  clients and also avail a variety of mover on one dial quick.This platform also offers online booking and quick response to clients of all levels our listing within Nairobi is as follows:ksh: 5000 for bedsitters Ksh: 8000 for one bedroom Ksh: 12000 for two bedroom Ksh:12500 for for studio",
+      "image": "https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcLzEwLXRpcHMtZm9yLWhpcmluZy1hLXByb2Zlc3Npb25hbC1tb3Zlci0xLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTQwLCJoZWlnaHQiOjMwM319fQ==",
+      "location":"Nairobi"
+    },
+    {
+      "id": 2,
+      "name": "Peace pegions",
+      "description": "This is to provide convidence and acceptability from clients and also avail a variety of mover on one dial quick.This platform also offers online booking and quick response to clients of all levels our listing within Nairobi is as follows:ksh: 5000 for bedsitters Ksh: 8000 for one bedroom Ksh: 12000 for two bedroom Ksh:12500 for for studio",
+      "image": "https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcLzEwLXRpcHMtZm9yLWhpcmluZy1hLXByb2Zlc3Npb25hbC1tb3Zlci0xLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTQwLCJoZWlnaHQiOjMwM319fQ==",
+      "location":"Nakuru"
+    } 
   ]
 }

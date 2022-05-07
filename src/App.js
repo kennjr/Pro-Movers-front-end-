@@ -8,16 +8,24 @@ import Nav from './components/nav/Nav';
 
 import About from './components/About';
 
-// import MoverAbout from './components/moverabout/MoverAbout';
-import Userlogs from './components/activity-logs-user/Userlogs';
-import Moverlogs from './components/activity-logs-mover/Moverlogs';
+
+// import Userlogs from './components/activity-logs-user/Userlogs';
+// import Moverlogs from './components/activity-logs-mover/Moverlogs';
 
 import './App.css';
 import Movers from './components/Movers';
 import Book from './components/Book';
 import Footer from './components/Footer';
-// import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 
+
+import {
+  geocodeByAddress,
+  geocodeByPlaceId,
+  getLatLng,
+} from "react-places-autocomplete";
+
+//AIzaSyAMNx-zK5ZTkXO5bkqgQABAerof4yWBlc0
+// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMNx-zK5ZTkXO5bkqgQABAerof4yWBlc0&libraries=places"></script>;
 
  
 function App() {
@@ -47,7 +55,7 @@ const [bookings,setBookings]=useState([])
       setMovers(moversFromServer)
     }
     getMovers();
-  },[]);
+  },[bookings]);
 
   //fetch movers
   const fetchMovers = async (id) =>{
@@ -65,7 +73,7 @@ const [bookings,setBookings]=useState([])
       <AuthProvider>
         <Routes>
           <Route path="/about" element={<About />} onBook={makeBooking}></Route>
-          <Route path="movers" element={<Movers movers={movers} />}></Route>
+          <Route path="movers" element={ movers.length > 0 ?( <Movers movers={movers} />):('There are no registered movers yet/ the backend server is not running')}></Route>
           <Route path="login" element={<Login />}></Route>
           <Route path="register" element={<Register />}></Route>
           <Route path="movers/book" element={<Book onBook={makeBooking} />}></Route>
