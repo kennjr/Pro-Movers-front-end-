@@ -1,7 +1,9 @@
 import "../css/Booking-form.css";
 import { useState } from "react";
+import {useParams} from 'react-router-dom'
 
-const Book = ({onBook}) => {
+const Book = ({onBook},props) => {
+  
   const [currentLocation,setCurrentLocation]=useState('');
   const [newLocation,setNewLocation]=useState('');
   const [mover,setMover]=useState('');
@@ -15,6 +17,7 @@ const Book = ({onBook}) => {
       alert('please ensure to fill all fields')
       return
     }
+   
 
     onBook({currentLocation,newLocation,mover,movingDate,Package,packageDescription})
         setCurrentLocation('');
@@ -24,6 +27,7 @@ const Book = ({onBook}) => {
         setPackage('');
         setPackageDescription('')
   }
+   const {id,name} = useParams();
   return (
     <>
       <div className="book">
@@ -31,6 +35,8 @@ const Book = ({onBook}) => {
           <div className="book-form-title">
             <p>
               Book Your mover <br />
+             {/* {id} 
+             {name} */}
             </p>
           </div>
           <div className="currentLocation-input">
@@ -59,7 +65,7 @@ const Book = ({onBook}) => {
               name="mover"
               id="mover"
               placeholder="mover"
-              value={mover}
+              value={name}
               onChange={(e) => setMover(e.target.value)}
             />
           </div>
@@ -106,4 +112,4 @@ const Book = ({onBook}) => {
   );
 };
 
-export default Book;
+export default Book ;
