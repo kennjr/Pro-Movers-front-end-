@@ -62,7 +62,7 @@ const Movers = ({ movers }) => {
                 <p>{filteredMover.description}</p>
                 <br />
                 <span className="button">
-                  <Link to="/movers/book">Book this mover</Link>
+                  <Link to={"/movers/book/"+filteredMover.name+"/"+filteredMover.id}>Book this mover</Link>
                 </span>
               </div>
             </div>

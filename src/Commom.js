@@ -1,5 +1,5 @@
 import React from "react";
-import web from "../src/images/img2.svg";
+// import web from "../src/images/img2.svg";
 import { NavLink } from "react-router-dom";
 
 const Commom = (props) => {

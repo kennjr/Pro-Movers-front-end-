@@ -5,8 +5,10 @@ import {Routes, Route} from 'react-router-dom';
 import Login from './components/login/Login';
 import { AuthProvider } from './components/context/AuthContext'
 import Nav from './components/nav/Nav';
-
+import Home from './Home';
+import Service from "./Service";
 import About from './components/About';
+import axios from 'axios';
 
 
 // import Userlogs from './components/activity-logs-user/Userlogs';
@@ -62,6 +64,8 @@ const [bookings,setBookings]=useState([])
     const res =await fetch ("http://localhost:5000/movers");
     const data = await res.json();
     return data;
+
+   
   }
 
   return (
@@ -72,11 +76,13 @@ const [bookings,setBookings]=useState([])
       <Nav></Nav>
       <AuthProvider>
         <Routes>
+          <Route exact path="/" element={<Home/>} />
           <Route path="/about" element={<About />} onBook={makeBooking}></Route>
+           <Route exact path="/service" element={<Service/>} />
           <Route path="movers" element={ movers.length > 0 ?( <Movers movers={movers} />):('There are no registered movers yet/ the backend server is not running')}></Route>
           <Route path="login" element={<Login />}></Route>
           <Route path="register" element={<Register />}></Route>
-          <Route path="movers/book" element={<Book onBook={makeBooking} />}></Route>
+          <Route path="movers/book/:name/:id" element={<Book onBook={makeBooking} />}></Route>
         </Routes>
       </AuthProvider>
 

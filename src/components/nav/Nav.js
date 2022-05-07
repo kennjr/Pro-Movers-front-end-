@@ -28,8 +28,8 @@ let Nav = ()=>{
                         </div>
                         <div  className={isActive ? 'active header-nav-links': 'header-nav-links'}>
                             <ul className="header-nav-links-ul">
-                                <li><NavLink to="">Home</NavLink></li>
-                                <li><NavLink to="">Services</NavLink></li>
+                                <li><NavLink to="/">Home</NavLink></li>
+                                <li><NavLink to="/services">Services</NavLink></li>
                                 <li><NavLink to="movers">Movers</NavLink></li>
                                 <li><NavLink to="/about">About</NavLink></li>
                                 <li><NavLink to='movers/logs'>Contact</NavLink></li>
