@@ -6,6 +6,7 @@ import Login from './components/login/Login';
 import { AuthProvider } from './components/context/AuthContext'
 import Nav from './components/nav/Nav';
 import Home from './Home';
+import Contact from './Contact'
 import Service from "./Service";
 import About from './components/About';
 import axios from 'axios';
@@ -80,6 +81,7 @@ const [bookings,setBookings]=useState([])
           <Route path="/about" element={<About />} onBook={makeBooking}></Route>
            <Route exact path="/service" element={<Service/>} />
           <Route path="movers" element={ movers.length > 0 ?( <Movers movers={movers} />):('There are no registered movers yet/ the backend server is not running')}></Route>
+           <Route exact path="/contact" element={<Contact/>} />
           <Route path="login" element={<Login />}></Route>
           <Route path="register" element={<Register />}></Route>
           <Route path="movers/book/:name/:id" element={<Book onBook={makeBooking} />}></Route>
