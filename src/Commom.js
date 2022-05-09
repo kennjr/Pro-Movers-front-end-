@@ -24,7 +24,7 @@ const Commom = (props) => {
                     Moving day it’s just another day.
                   </h2>
                   <div className="mt-3">
-                    <NavLink to={props.visit} className="btn-get-started ">
+                    <NavLink to={"movers"} className="btn-get-started ">
                       {props.btname}
                     </NavLink>
                   </div>
