@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../static/css/nav.css';
+import AuthContext from '../context/AuthContext';
 
 let Nav = ()=>{
 
-    
+    let {user} = useContext(AuthContext)
 
     let [isActive, setActive] = useState(false);
 
@@ -19,7 +21,7 @@ let Nav = ()=>{
                 <nav className="header-nav">
                     <article className="header-nav-container">
                         <div className="header-nav-logo">
-                            <h1>Pro Movers</h1>
+                            <h1>Pro movers</h1>
                             <div  className={isActive ? 'active header-nav-logo-hamburger hamburger': 'header-nav-logo-hamburger hamburger'} onClick={toggleClass}>
                                 <span className="header-nav-logo-hamburger-bar bar"></span>
                                 <span className="header-nav-logo-hamburger-bar bar"></span>
@@ -33,8 +35,7 @@ let Nav = ()=>{
                                 <li><NavLink to="movers">Movers</NavLink></li>
                                 <li><NavLink to="/about">About</NavLink></li>
                                 <li><NavLink to='/contact'>Contact</NavLink></li>
-                                <li><NavLink to="/login">LOGIN</NavLink></li>
-                                 
+                                {user?<li><NavLink to="/contact">{user.username}</NavLink></li>:<li><NavLink to="/login">LOGIN</NavLink></li>}
                             </ul>
                         </div>
                     </article>

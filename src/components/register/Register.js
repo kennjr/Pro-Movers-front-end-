@@ -24,6 +24,7 @@ let Register = ()=>{
                 username:username,
                 email:email,
                 password:pwd,
+                name:'hello',
                 acc_type:role
             })
             .then(res=>{

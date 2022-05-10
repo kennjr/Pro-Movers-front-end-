@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
 
 import Register from './components/register/Register'
@@ -73,9 +74,8 @@ const [bookings,setBookings]=useState([])
     <>
 
 
-    
-      <Nav></Nav>
-      <AuthProvider>
+      <AuthProvider>    
+        <Nav></Nav>
         <Routes>
           <Route exact path="/" element={<Home/>} />
           <Route path="/about" element={<About />} onBook={makeBooking}></Route>
