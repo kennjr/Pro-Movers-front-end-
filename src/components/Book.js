@@ -1,5 +1,5 @@
 import "../css/Booking-form.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {useParams} from 'react-router-dom'
 
 const Book = ({onBook},props) => {
@@ -10,6 +10,10 @@ const Book = ({onBook},props) => {
   const [movingDate, setMovingDate] = useState("");
   const [Package,setPackage]=useState('');
   const [packageDescription,setPackageDescription]=useState('')
+
+  useEffect(()=>{
+    setMover(id);
+  })
 
   const onSubmit= (e) =>{
     e.preventDefault()
@@ -46,7 +50,7 @@ const Book = ({onBook},props) => {
               onChange={(e) => setCurrentLocation(e.target.value)}
               name="currentLocation"
               id="currentLocation"
-              placeholder="currentLocation"
+              placeholder="current location"
             />
           </div>
           <div className=" newLocation">
@@ -66,7 +70,7 @@ const Book = ({onBook},props) => {
               id="mover"
               placeholder="mover"
               value={name}
-              onChange={(e) => setMover(e.target.value)}
+              onChange={(e) =>setMover(e.target.value)}
             />
           </div>
           <div className="movingDate">

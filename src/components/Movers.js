@@ -52,7 +52,7 @@ const Movers = ({ movers }) => {
         {movers
           .filter((mover) => mover.location.includes(selectedLocation))
           .map((filteredMover) => (
-            <div className="row1 row3 ">
+            <div className="row1 row3 " key={filteredMover.id}>
               <div className="mover2">
                 <img src={filteredMover.image} alt="mover" />
               </div>

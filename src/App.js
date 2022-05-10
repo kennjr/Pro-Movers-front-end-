@@ -38,13 +38,16 @@ const [bookings,setBookings]=useState([])
   // add booking
   const makeBooking= async (booking)=>{
 
-    const res = await fetch("http://localhost:5000/bookings",{
-      method:'POST',
-      headers:{
-        'Content-type':'application/json'
-      },
-      body: JSON.stringify(booking)
-    });
+    const res = await fetch(
+      "https://api-promovers.herokuapp.com/requests/new-request/",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(booking),
+      }
+    );
     const data = await res.json()
 
     setBookings([...bookings,data])
