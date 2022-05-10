@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 
-import React,{useState, useEffect, useRef,useContext} from "react";
+import React,{ useEffect, useRef,useContext} from "react";
 import '../../static/css/login.css'
 import AuthContext from "../context/AuthContext";
 import {Link} from 'react-router-dom';
@@ -10,23 +10,12 @@ let Login = ()=>{
 
     let {loginUser} = useContext(AuthContext);
 
-    let [email, useEmail] = useState('')
-    let [pwd, usePwd] = useState()
 
     let emailRef = useRef()
 
     useEffect(()=>{
         emailRef.current.focus()
     },[])
-
-    let getEmail = e =>{
-        useEmail(e.target.value)
-    };
-
-    let getPwd = e =>{
-        usePwd(e.target.value)
-    };
-
 
     return(
         <>
@@ -50,10 +39,10 @@ let Login = ()=>{
                             <h1>Sign In</h1>
                         </div>
                         <div className="login-form-form-email">
-                            <input type="email" ref={emailRef} name="email" id="email"  placeholder="Email" value={email} onChange={getEmail} required />
+                            <input type="email" ref={emailRef} name="email" id="email"  placeholder="Email"  required />
                         </div>
                         <div className="login-form-form-password">
-                            <input type="password" name="password" id="password"  placeholder="Password"value={pwd} onChange={getPwd} required />
+                            <input type="password" name="password" id="password"  placeholder="Password" required />
                         </div>
                         <div className="login-form-form-login">
                             <button type="submit">Sign In</button>
