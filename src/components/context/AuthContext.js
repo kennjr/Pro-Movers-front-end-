@@ -22,8 +22,8 @@ export let AuthProvider = ({children}) =>{
 
     let loginUser = async (e)=>{
         e.preventDefault();
-        console.log(`${e.target.email.value} ${e.target.password.value}`)
-        axios.post('https://api-promovers.herokuapp.com/login/',{
+        // console.log(`${e.target.email.value} ${e.target.password.value}`)
+        axios.post('http://127.0.0.1:8000/login/',{
             email:e.target.email.value,
             password:e.target.password.value
         })
@@ -58,7 +58,7 @@ export let AuthProvider = ({children}) =>{
 
     let updateToken = async ()=>{
         console.log('Update token called')
-        axios.post('https://api-promovers.herokuapp.com/login/refresh/',{
+        axios.post('http://127.0.0.1:8000/login/refresh/',{
             'refresh':authTokens?.refresh
         })
         .then(res=>{
