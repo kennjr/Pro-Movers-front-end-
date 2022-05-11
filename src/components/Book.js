@@ -1,46 +1,64 @@
 import "../css/Booking-form.css";
-import { useEffect, useState } from "react";
-import {useParams} from 'react-router-dom'
-
+import { useEffect, useState ,useContext} from "react";
+import AuthContext from "./context/AuthContext";
+import {useParams} from 'react-router-dom';
+import * as ReactBootStrap from "react-bootstrap";
+import axios from "axios";
+ 
 const Book = ({onBook},props) => {
-  
+
+  let {user}=useContext(AuthContext)
+ 
+  const [id_user, setUser] = useState(0);
   const [currentLocation,setCurrentLocation]=useState('');
   const [newLocation,setNewLocation]=useState('');
-  const [mover,setMover]=useState('');
+  const [id_mover, setMover] = useState(0);
   const [movingDate, setMovingDate] = useState("");
   const [Package,setPackage]=useState('');
   const [packageDescription,setPackageDescription]=useState('')
 
   useEffect(()=>{
-    setMover(id);
+    setMover( parseInt(id));
+  setUser(parseInt(user.user_id))
+
   })
 
   const onSubmit= (e) =>{
     e.preventDefault()
-    if(!currentLocation || !newLocation || !mover || !Package || !movingDate || !packageDescription){
+    if(!currentLocation || !newLocation || !id_mover || !Package || !movingDate || !packageDescription){
       alert('please ensure to fill all fields')
       return
     }
-   
+    
+      axios
+        .post("https://promovers.herokuapp.com/requests/new-request/", {
+          currentLocation: currentLocation,
+          newLocation: newLocation,
+          id_mover: id_mover,
+          movingDate: movingDate,
+          Package: Package,
+          packageDescription: packageDescription,
+          id_user: id_user,
+        })
+        .then((res) => console.log("posting data", res))
+        .catch((err) => console.log(err));
+  
 
-    onBook({currentLocation,newLocation,mover,movingDate,Package,packageDescription})
-        setCurrentLocation('');
-        setNewLocation('');
-        setMover('');
-        setMovingDate('')
-        setPackage('');
-        setPackageDescription('')
+
   }
    const {id,name} = useParams();
   return (
     <>
       <div className="book">
+         {/* <div className="spinner">
+                {<ReactBootStrap.Spinner animation="border" variant="warning" />}
+            </div> */}
+
+            
         <form action="" className="book-form" onSubmit={onSubmit}>
           <div className="book-form-title">
             <p>
               Book Your mover <br />
-             {/* {id} 
-             {name} */}
             </p>
           </div>
           <div className="currentLocation-input">
@@ -70,7 +88,7 @@ const Book = ({onBook},props) => {
               id="mover"
               placeholder="mover"
               value={name}
-              onChange={(e) =>setMover(e.target.value)}
+              // onChange={(e) =>setMover(e.target.value)}
             />
           </div>
           <div className="movingDate">

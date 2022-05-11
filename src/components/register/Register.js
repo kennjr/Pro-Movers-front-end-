@@ -20,11 +20,11 @@ let Register = ()=>{
     let handleSubmit = e=>{
         e.preventDefault();
         if(pwd === pwd2){
-            axios.post('https://api-promovers.herokuapp.com/register/',{
+            axios.post('https://promovers.herokuapp.com/register/',{
                 username:username,
                 email:email,
                 password:pwd,
-                name:'hello',
+                name:username,
                 acc_type:role
             })
             .then(res=>{
