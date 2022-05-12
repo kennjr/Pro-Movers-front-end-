@@ -1,32 +1,15 @@
-<<<<<<< HEAD
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-unused-vars */
 import axios from 'axios';
 import React,{useEffect,useState,useContext} from 'react';
 
 import '../../static/css/userlogs.css';
 import AuthContext from '../context/AuthContext';
-
-=======
-/* eslint-disable no-use-before-define */
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable no-unused-vars */
-import axios from 'axios';
-import React,{useState,useEffect,useContext} from 'react';
-import AuthContext from '../context/AuthContext';
-import '../../static/css/userlogs.css';
-import UserLogsSingle from './UserLogsSingle'
->>>>>>> master
+import UserLogsSingle from './UserLogsSingle';
 
 let Userlogs = ()=>{
     let [request, useRequest] = useState([])
-
-    let {user}  = useContext(AuthContext)
-
-    useEffect(()=>{
-        axios.get(`http://127.0.0.1:8000/requests/${user.username}/`)
-        .then(res=>console.log(res))
-        .catch(err=>console.log(err))
-    },[request, user.username])
 
     let {user} = useContext(AuthContext)
 
@@ -47,7 +30,7 @@ let Userlogs = ()=>{
         <>
             <section className="user-activity">
                 <article className="user-activity-title">
-                    <h1>Activity logs {user.email}</h1>
+                    <h1>Activity logs</h1>
                 </article>
                 <article className="user-activity-all">
                     

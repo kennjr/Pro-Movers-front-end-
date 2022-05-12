@@ -1,8 +1,8 @@
-/* eslint-disable no-unused-vars */
+
 /* eslint-disable react-hooks/rules-of-hooks */
 import React,{useState,useRef,useEffect} from 'react';
 import '../../static/css/register.css'
-import {Link, browserHistory } from 'react-router-dom';
+import {Link } from 'react-router-dom';
 import axios from 'axios';
 import * as ReactBootStrap from 'react-bootstrap';
 
@@ -23,8 +23,7 @@ let Register = ()=>{
                 username:username,
                 email:email,
                 password:pwd,
-                name:username,
-                acc_type:'user'
+                password2:pwd2
             })
             .then(res=>{
                 console.log(res)
@@ -38,7 +37,6 @@ let Register = ()=>{
             })
             useLoading(true)
             
-            .catch(err=>console.log(err))
         }
     };
 

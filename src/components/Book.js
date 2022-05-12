@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react-hooks/exhaustive-deps */
 import "../css/Booking-form.css";
 import { useEffect, useState ,useContext} from "react";
@@ -44,7 +46,7 @@ const Book = ({onBook},props) => {
          .then(res=>{
                 console.log(res)
                 useLoading(false)
-                window.location.href = "/movers";
+                window.location.href = "/user/logs";
                 setCurrentLocation('');
                 setNewLocation('');
                 setMovingDate('');

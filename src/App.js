@@ -102,11 +102,8 @@ const [bookings,setBookings]=useState([])
         </Routes>
       </AuthProvider>
 
-<<<<<<< HEAD
-=======
 {/* 
       <Footer></Footer> */}
->>>>>>> master
 
     </>
   );
