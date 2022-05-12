@@ -8,7 +8,7 @@ import axios from "axios";
 const Book = ({onBook},props) => {
 
   let {user}=useContext(AuthContext)
- 
+  let [loading, useLoading] = useState(false);
   const [id_user, setUser] = useState(0);
   const [currentLocation,setCurrentLocation]=useState('');
   const [newLocation,setNewLocation]=useState('');
@@ -42,6 +42,7 @@ const Book = ({onBook},props) => {
         })
         .then((res) => console.log("posting data", res))
         .catch((err) => console.log(err));
+        // useLoading(true);
   
 
 
@@ -50,9 +51,11 @@ const Book = ({onBook},props) => {
   return (
     <>
       <div className="book">
-         {/* <div className="spinner">
+        { loading ?
+            <div className="spinner">
                 {<ReactBootStrap.Spinner animation="border" variant="warning" />}
-            </div> */}
+            </div>:''
+            }
 
             
         <form action="" className="book-form" onSubmit={onSubmit}>
