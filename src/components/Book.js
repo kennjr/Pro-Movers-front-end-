@@ -4,11 +4,12 @@
 import "../css/Booking-form.css";
 import { useEffect, useState ,useContext} from "react";
 import AuthContext from "./context/AuthContext";
-import {useParams} from 'react-router-dom';
+import {useParams,useNavigate} from 'react-router-dom';
 import axios from "axios";
  
 const Book = ({onBook},props) => {
 
+  let navigate = useNavigate()
   let {user}=useContext(AuthContext)
   const [loading, useLoading] = useState(false);
   const [id_user, setUser] = useState(0);
@@ -46,7 +47,7 @@ const Book = ({onBook},props) => {
          .then(res=>{
                 console.log(res)
                 useLoading(false)
-                window.location.href = "/user/logs";
+                navigate("/user/logs")
                 setCurrentLocation('');
                 setNewLocation('');
                 setMovingDate('');
