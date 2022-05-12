@@ -8,7 +8,7 @@ import axios from "axios";
 const Book = ({onBook},props) => {
 
   let {user}=useContext(AuthContext)
-  const [loading, useLoading] = useState(false);
+  // const [loading, useLoading] = useState(false);
   const [id_user, setUser] = useState(0);
   const [currentLocation,setCurrentLocation]=useState('');
   const [newLocation,setNewLocation]=useState('');
@@ -43,7 +43,7 @@ const Book = ({onBook},props) => {
         })
          .then(res=>{
                 console.log(res)
-                useLoading(false)
+                // useLoading(false)
                 window.location.href = "/user/logs";
                 setCurrentLocation('');
                 setNewLocation('');
@@ -52,7 +52,7 @@ const Book = ({onBook},props) => {
                 setPackageDescription('');
 
             }) 
-        useLoading(true)
+        // useLoading(true)
         .then((res) => console.log("posting data", res))
         .catch((err) => console.log(err));
        
@@ -64,11 +64,11 @@ const Book = ({onBook},props) => {
   return (
     <>
       <div className="book">
-        { loading ?
+        {/* { loading ?
             <div className="spinner">
                 {<ReactBootStrap.Spinner animation="border" variant="warning" />}
             </div>:''
-            }
+            } */}
 
             
         <form action="" className="book-form" onSubmit={onSubmit}>
