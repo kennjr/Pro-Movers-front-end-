@@ -3,7 +3,7 @@
 import React,{useState,useEffect,createContext} from 'react';
 import jwt_decode from 'jwt-decode';
 import axios from 'axios';
-import { useHistory} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 
 let AuthContext =  createContext();
 
@@ -13,6 +13,7 @@ export default AuthContext;
 
 export let AuthProvider = ({children}) =>{
 
+    let navigate = useNavigate()
     
     let [authTokens, setAuthTokens] = useState(()=>localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null);
     
@@ -46,7 +47,7 @@ export let AuthProvider = ({children}) =>{
         setAuthTokens(null)
         setUser(null)
         localStorage.removeItem('authTokens')
-        window.location.href="/login"
+        navigate("/login")
     }
 
     let contextData={ 
