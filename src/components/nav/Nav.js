@@ -34,7 +34,7 @@ let Nav = ()=>{
                                 <li><NavLink to="/services">Services</NavLink></li>
                                 <li><NavLink to="movers">Movers</NavLink></li>
                                 <li><NavLink to="/about">About</NavLink></li>
-                                {user?<li><NavLink to="/contact">{user.username}</NavLink></li>:<li><NavLink to="/login">LOGIN</NavLink></li>}
+                                {user?<li><NavLink to="/contact">{user.username}</NavLink></li>:<li><NavLink to="/login" >LOGIN</NavLink></li>}
                             </ul>
                         </div>
                     </article>
