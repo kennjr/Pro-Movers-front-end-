@@ -25,7 +25,7 @@ let Register = ()=>{
                 email:email,
                 password:pwd,
                 name:username,
-                acc_type:role
+                acc_type:'user'
             })
             .then(res=>{
                 console.log(res)
