@@ -12,7 +12,6 @@ let Register = ()=>{
     let [email, useEmail] = useState('');
     let [pwd, usePwd] = useState('');
     let [pwd2, usePwd2] = useState('');
-    let [role, useRole] = useState('');
     let [loading, useLoading] = useState(false);
 
     let usernameRef = useRef()
@@ -25,7 +24,7 @@ let Register = ()=>{
                 email:email,
                 password:pwd,
                 name:username,
-                acc_type:role
+                acc_type:'user'
             })
             .then(res=>{
                 console.log(res)
@@ -35,7 +34,6 @@ let Register = ()=>{
                 useEmail('')
                 usePwd('')
                 usePwd2('')
-                useRole('')
 
             })
             useLoading(true)
@@ -85,19 +83,6 @@ let Register = ()=>{
                         </div>
                         <div className="register-form-form-password">
                             <input type="password"   placeholder="Password Confirmation" value={pwd2} onChange={(e=>usePwd2(e.target.value))} required/>
-                        </div>
-                        <div className="register-form-form-role">
-                            <p className="register-form-form-role-title">What is your role? </p>
-                            <div className="register-form-form-role-container">
-                                <div className="register-form-form-role-user">
-                                    <input type="radio" name="role" id="role" value='user' onChange={e=>useRole(e.target.value)} required/>
-                                    <p>User</p>
-                                </div>
-                                <div className="register-form-form-role-mover">
-                                    <input type="radio" name="role" id="role" value='mover' onChange={e=>useRole(e.target.value)} required/>
-                                    <p>Mover</p>
-                                </div>
-                            </div>
                         </div>
                         <div className="register-form-form-register">
                             <button type="submit">Sign Up</button>

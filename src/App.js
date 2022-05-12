@@ -13,8 +13,8 @@ import About from './components/About';
 import axios from 'axios';
 
 
-// import Userlogs from './components/activity-logs-user/Userlogs';
-// import Moverlogs from './components/activity-logs-mover/Moverlogs';
+import Userlogs from './components/activity-logs-user/Userlogs';
+import Moverlogs from './components/activity-logs-mover/Moverlogs';
 
 import './App.css';
 import Movers from './components/Movers';
@@ -93,13 +93,20 @@ const [bookings,setBookings]=useState([])
           <Route path="movers" element={ movers.length > 0 ?( <Movers movers={movers} />):('There are no registered movers yet/ the backend server is not running')}></Route>
            <Route exact path="/contact" element={<Contact/>} />
           <Route path="login" element={<Login />}></Route>
+          <Route path="user/logs" element={<Userlogs />}></Route>
+          <Route path="mover/logs" element={<Moverlogs />}></Route>
           <Route path="register" element={<Register />}></Route>
+          <Route path="user/logs" element={<Userlogs />}></Route>
+          <Route path="mover/logs" element={<Moverlogs />}></Route>
           <Route path="movers/book/:name/:id" element={<AuthProvider><Book onBook={makeBooking} /></AuthProvider>}></Route>
         </Routes>
       </AuthProvider>
 
-
-      <Footer></Footer>
+<<<<<<< HEAD
+=======
+{/* 
+      <Footer></Footer> */}
+>>>>>>> master
 
     </>
   );
