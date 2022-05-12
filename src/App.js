@@ -96,10 +96,17 @@ const [bookings,setBookings]=useState([])
           <Route path="user/logs" element={<Userlogs />}></Route>
           <Route path="mover/logs" element={<Moverlogs />}></Route>
           <Route path="register" element={<Register />}></Route>
+          <Route path="user/logs" element={<Userlogs />}></Route>
+          <Route path="mover/logs" element={<Moverlogs />}></Route>
           <Route path="movers/book/:name/:id" element={<AuthProvider><Book onBook={makeBooking} /></AuthProvider>}></Route>
         </Routes>
       </AuthProvider>
 
+<<<<<<< HEAD
+=======
+{/* 
+      <Footer></Footer> */}
+>>>>>>> master
 
     </>
   );
