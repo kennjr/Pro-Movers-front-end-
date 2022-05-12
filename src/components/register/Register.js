@@ -19,7 +19,7 @@ let Register = ()=>{
     let handleSubmit = e=>{
         e.preventDefault();
         if(pwd === pwd2){
-            axios.post('http://127.0.0.1:8000/register/',{
+            axios.post('https://promovers.herokuapp.com/register/',{
                 username:username,
                 email:email,
                 password:pwd,

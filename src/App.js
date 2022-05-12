@@ -37,19 +37,29 @@ function App() {
 const [bookings,setBookings]=useState([])
 
   // add booking
-  const makeBooking= async (booking)=>{
-
-    const res = await fetch("http://localhost:5000/bookings",{
-      method:'POST',
-      headers:{
-        'Content-type':'application/json'
-      },
-      body: JSON.stringify(booking)
-    });
-    const data = await res.json()
-
-    setBookings([...bookings,data])
-         
+  const makeBooking= ()=>{
+    axios.post("https://promovers.herokuapp.com/requests/new-request/", {
+      // currentLocation,
+      // newLocation,
+      // id_mover,
+      // movingDate,
+      // Package,
+      // packageDescription, 
+      // id_user,
+    }).then(res=>console.log('posting data',res)).catch(err=>console.log(err));
+      // alert('hello')
+    // const res = await fetch("https://promovers.herokuapp.com/requests/new-request/",
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-type": "application/json",
+    //     },
+    //     body: JSON.stringify(booking),
+    //   }
+    // );
+    // const data = await res.json()
+    //   console.log(data)
+    // setBookings([...bookings,data]) 
   }
   const [movers, setMovers] = useState([]);
 
@@ -63,7 +73,7 @@ const [bookings,setBookings]=useState([])
 
   //fetch movers
   const fetchMovers = async (id) =>{
-    const res =await fetch ("http://localhost:5000/movers");
+    const res = await fetch("https://promovers.herokuapp.com/movers/");
     const data = await res.json();
     return data;
 
@@ -86,7 +96,7 @@ const [bookings,setBookings]=useState([])
           <Route path="user/logs" element={<Userlogs />}></Route>
           <Route path="mover/logs" element={<Moverlogs />}></Route>
           <Route path="register" element={<Register />}></Route>
-          <Route path="movers/book/:name/:id" element={<Book onBook={makeBooking} />}></Route>
+          <Route path="movers/book/:name/:id" element={<AuthProvider><Book onBook={makeBooking} /></AuthProvider>}></Route>
         </Routes>
       </AuthProvider>
 
