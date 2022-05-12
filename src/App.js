@@ -105,6 +105,7 @@ const [bookings,setBookings]=useState([])
 {/* 
       <Footer></Footer> */}
 
+
     </>
   );
 }
