@@ -37,7 +37,7 @@ let Userlogs = ()=>{
         <>
             <section className="user-activity">
                 <article className="user-activity-title">
-                    <h1>Activity logs {user.email}</h1>
+                    <h1>Activity logs {user.username}</h1>
                 </article>
                 <article className="user-activity-all">
                     
