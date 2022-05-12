@@ -1,8 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "../css/Booking-form.css";
 import { useEffect, useState ,useContext} from "react";
 import AuthContext from "./context/AuthContext";
 import {useParams} from 'react-router-dom';
-import * as ReactBootStrap from "react-bootstrap";
 import axios from "axios";
  
 const Book = ({onBook},props) => {
@@ -39,6 +39,7 @@ const Book = ({onBook},props) => {
           Package: Package,
           packageDescription: packageDescription,
           id_user: id_user,
+          is_pending:true
         })
         .then((res) => console.log("posting data", res))
         .catch((err) => console.log(err));
